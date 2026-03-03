@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── G S Pishori Dhaba Design Tokens ──────────────────────────── */
+/* Fonts: Playfair Display (display) + General Sans (body)         */
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm cream background */
+    --background: 0.97 0.015 85;
+    --foreground: 0.18 0.04 30;
+
+    /* Card: off-white warm */
+    --card: 0.99 0.01 75;
+    --card-foreground: 0.18 0.04 30;
+
+    /* Popover */
+    --popover: 0.99 0.01 75;
+    --popover-foreground: 0.18 0.04 30;
+
+    /* Primary: Deep crimson red */
+    --primary: 0.42 0.19 22;
+    --primary-foreground: 0.99 0.01 75;
+
+    /* Secondary: saffron/amber */
+    --secondary: 0.88 0.12 65;
+    --secondary-foreground: 0.18 0.04 30;
+
+    /* Muted: warm taupe */
+    --muted: 0.93 0.02 75;
+    --muted-foreground: 0.5 0.04 40;
+
+    /* Accent: saffron orange */
+    --accent: 0.75 0.16 50;
+    --accent-foreground: 0.99 0.01 75;
+
+    /* Destructive */
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.99 0.01 75;
+
+    /* Border & Input */
+    --border: 0.88 0.04 60;
+    --input: 0.88 0.04 60;
+    --ring: 0.42 0.19 22;
+
+    /* Charts */
+    --chart-1: 0.42 0.19 22;
+    --chart-2: 0.75 0.16 50;
+    --chart-3: 0.62 0.14 40;
+    --chart-4: 0.88 0.12 65;
+    --chart-5: 0.55 0.1 30;
+
+    /* Sidebar */
+    --sidebar: 0.95 0.025 80;
+    --sidebar-foreground: 0.18 0.04 30;
+    --sidebar-primary: 0.42 0.19 22;
+    --sidebar-primary-foreground: 0.99 0.01 75;
+    --sidebar-accent: 0.88 0.12 65;
+    --sidebar-accent-foreground: 0.18 0.04 30;
+    --sidebar-border: 0.88 0.04 60;
+    --sidebar-ring: 0.42 0.19 22;
+
+    /* Brand tokens */
+    --dhaba-crimson: oklch(0.42 0.19 22);
+    --dhaba-crimson-dark: oklch(0.32 0.16 22);
+    --dhaba-saffron: oklch(0.75 0.16 50);
+    --dhaba-amber: oklch(0.88 0.12 65);
+    --dhaba-cream: oklch(0.97 0.015 85);
+    --dhaba-spice: oklch(0.62 0.14 40);
+    --dhaba-gold: oklch(0.82 0.14 75);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-body {
+    font-family: "General Sans", sans-serif;
+  }
+
+  .text-crimson {
+    color: var(--dhaba-crimson);
+  }
+
+  .bg-crimson {
+    background-color: var(--dhaba-crimson);
+  }
+
+  .bg-saffron {
+    background-color: var(--dhaba-saffron);
+  }
+
+  .text-saffron {
+    color: var(--dhaba-saffron);
+  }
+
+  .bg-dhaba-cream {
+    background-color: var(--dhaba-cream);
+  }
+
+  .dhaba-section {
+    @apply py-20 md:py-28;
+  }
+
+  /* Grain texture overlay */
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  /* Menu card hover */
+  .menu-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px oklch(0.42 0.19 22 / 0.15);
+  }
+
+  /* Gallery hover */
+  .gallery-item img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+}
