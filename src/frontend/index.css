@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── G S Pishori Dhaba Design Tokens ──────────────────────────── */
-/* Fonts: Playfair Display (display) + General Sans (body)         */
+/* ── Anshu Dhaba — Professional Design Tokens ─────────────────── */
+/* Fonts: Fraunces (display) + General Sans (body)                  */
 
 @font-face {
-  font-family: "Playfair Display";
-  src: url("/assets/fonts/PlayfairDisplay-Variable.woff2") format("woff2");
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -21,72 +21,85 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    --radius: 0.75rem;
+    --radius: 0.625rem;
 
-    /* Warm cream background */
-    --background: 0.97 0.015 85;
-    --foreground: 0.18 0.04 30;
+    /* Backgrounds — warm off-white with subtle warmth */
+    --background: 0.975 0.008 72;
+    --foreground: 0.16 0.035 28;
 
-    /* Card: off-white warm */
-    --card: 0.99 0.01 75;
-    --card-foreground: 0.18 0.04 30;
+    /* Card: pure white */
+    --card: 1 0 0;
+    --card-foreground: 0.16 0.035 28;
 
     /* Popover */
-    --popover: 0.99 0.01 75;
-    --popover-foreground: 0.18 0.04 30;
+    --popover: 1 0 0;
+    --popover-foreground: 0.16 0.035 28;
 
-    /* Primary: Deep crimson red */
-    --primary: 0.42 0.19 22;
+    /* Primary: rich deep crimson */
+    --primary: 0.38 0.2 18;
     --primary-foreground: 0.99 0.01 75;
 
-    /* Secondary: saffron/amber */
-    --secondary: 0.88 0.12 65;
-    --secondary-foreground: 0.18 0.04 30;
+    /* Secondary: warm saffron */
+    --secondary: 0.92 0.1 65;
+    --secondary-foreground: 0.16 0.035 28;
 
-    /* Muted: warm taupe */
-    --muted: 0.93 0.02 75;
-    --muted-foreground: 0.5 0.04 40;
+    /* Muted: very light warm grey */
+    --muted: 0.96 0.01 70;
+    --muted-foreground: 0.48 0.04 40;
 
-    /* Accent: saffron orange */
-    --accent: 0.75 0.16 50;
+    /* Accent: vibrant saffron */
+    --accent: 0.72 0.17 48;
     --accent-foreground: 0.99 0.01 75;
 
     /* Destructive */
-    --destructive: 0.55 0.22 27;
+    --destructive: 0.52 0.22 25;
     --destructive-foreground: 0.99 0.01 75;
 
     /* Border & Input */
-    --border: 0.88 0.04 60;
-    --input: 0.88 0.04 60;
-    --ring: 0.42 0.19 22;
+    --border: 0.9 0.025 60;
+    --input: 0.9 0.025 60;
+    --ring: 0.38 0.2 18;
 
     /* Charts */
-    --chart-1: 0.42 0.19 22;
-    --chart-2: 0.75 0.16 50;
-    --chart-3: 0.62 0.14 40;
-    --chart-4: 0.88 0.12 65;
-    --chart-5: 0.55 0.1 30;
+    --chart-1: 0.38 0.2 18;
+    --chart-2: 0.72 0.17 48;
+    --chart-3: 0.58 0.14 38;
+    --chart-4: 0.84 0.12 62;
+    --chart-5: 0.5 0.1 28;
 
     /* Sidebar */
-    --sidebar: 0.95 0.025 80;
-    --sidebar-foreground: 0.18 0.04 30;
-    --sidebar-primary: 0.42 0.19 22;
+    --sidebar: 0.97 0.015 80;
+    --sidebar-foreground: 0.16 0.035 28;
+    --sidebar-primary: 0.38 0.2 18;
     --sidebar-primary-foreground: 0.99 0.01 75;
-    --sidebar-accent: 0.88 0.12 65;
-    --sidebar-accent-foreground: 0.18 0.04 30;
-    --sidebar-border: 0.88 0.04 60;
-    --sidebar-ring: 0.42 0.19 22;
+    --sidebar-accent: 0.84 0.12 62;
+    --sidebar-accent-foreground: 0.16 0.035 28;
+    --sidebar-border: 0.9 0.025 60;
+    --sidebar-ring: 0.38 0.2 18;
 
-    /* Brand tokens */
-    --dhaba-crimson: oklch(0.42 0.19 22);
-    --dhaba-crimson-dark: oklch(0.32 0.16 22);
-    --dhaba-saffron: oklch(0.75 0.16 50);
-    --dhaba-amber: oklch(0.88 0.12 65);
-    --dhaba-cream: oklch(0.97 0.015 85);
-    --dhaba-spice: oklch(0.62 0.14 40);
-    --dhaba-gold: oklch(0.82 0.14 75);
+    /* ── Brand palette tokens ───────────────────────────────── */
+    --dhaba-crimson:      oklch(0.38 0.2 18);
+    --dhaba-crimson-deep: oklch(0.28 0.18 18);
+    --dhaba-crimson-mid:  oklch(0.46 0.18 20);
+    --dhaba-crimson-soft: oklch(0.38 0.2 18 / 0.08);
+    --dhaba-saffron:      oklch(0.72 0.17 48);
+    --dhaba-saffron-warm: oklch(0.82 0.14 65);
+    --dhaba-amber:        oklch(0.95 0.03 72);
+    --dhaba-cream:        oklch(0.975 0.008 72);
+    --dhaba-spice:        oklch(0.58 0.14 38);
+    --dhaba-gold:         oklch(0.84 0.13 72);
+    --dhaba-dark:         oklch(0.14 0.04 20);
+    --dhaba-dark-mid:     oklch(0.19 0.05 24);
   }
 
   * {
@@ -95,6 +108,8 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -103,69 +118,87 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: "Playfair Display", serif;
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: "Playfair Display", serif;
+    font-family: "Fraunces", serif;
+  }
+
+  .font-subhead {
+    font-family: "Cabinet Grotesk", sans-serif;
   }
 
   .font-body {
     font-family: "General Sans", sans-serif;
   }
 
-  .text-crimson {
-    color: var(--dhaba-crimson);
-  }
-
-  .bg-crimson {
-    background-color: var(--dhaba-crimson);
-  }
-
-  .bg-saffron {
-    background-color: var(--dhaba-saffron);
-  }
-
-  .text-saffron {
-    color: var(--dhaba-saffron);
-  }
-
-  .bg-dhaba-cream {
-    background-color: var(--dhaba-cream);
-  }
-
+  /* ── Section helpers ─────────────────────────────────── */
   .dhaba-section {
     @apply py-20 md:py-28;
   }
 
-  /* Grain texture overlay */
+  /* ── Overline label ──────────────────────────────────── */
+  .overline-label {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ── Menu card ───────────────────────────────────────── */
+  .menu-card {
+    transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px oklch(0.38 0.2 18 / 0.18);
+  }
+
+  /* ── Gallery hover ───────────────────────────────────── */
+  .gallery-item img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.06);
+  }
+
+  /* ── Grain texture overlay ───────────────────────────── */
   .grain-overlay::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.25;
   }
 
-  /* Menu card hover */
-  .menu-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* ── Contact phone badge ─────────────────────────────── */
+  .phone-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--dhaba-crimson);
+    background: var(--dhaba-crimson-soft);
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--dhaba-crimson);
+    letter-spacing: 0.01em;
+    transition: background 0.2s ease;
   }
 
-  .menu-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px oklch(0.42 0.19 22 / 0.15);
-  }
-
-  /* Gallery hover */
-  .gallery-item img {
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.08);
+  .phone-badge:hover {
+    background: oklch(0.38 0.2 18 / 0.14);
   }
 }

@@ -74,12 +74,14 @@ export default {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        "dhaba-sm": "0 2px 8px oklch(0.42 0.19 22 / 0.12)",
-        "dhaba-md": "0 6px 24px oklch(0.42 0.19 22 / 0.15)",
-        "dhaba-lg": "0 16px 48px oklch(0.42 0.19 22 / 0.2)",
+        "dhaba-sm": "0 1px 4px oklch(0.38 0.2 18 / 0.08), 0 3px 10px oklch(0.38 0.2 18 / 0.06)",
+        "dhaba-md": "0 4px 16px oklch(0.38 0.2 18 / 0.1), 0 12px 32px oklch(0.38 0.2 18 / 0.08)",
+        "dhaba-lg": "0 8px 32px oklch(0.38 0.2 18 / 0.15), 0 24px 60px oklch(0.38 0.2 18 / 0.1)",
+        "card-hover": "0 20px 50px oklch(0.38 0.2 18 / 0.18)",
       },
       fontFamily: {
-        display: ['"Playfair Display"', "Georgia", "serif"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        subhead: ['"Cabinet Grotesk"', "system-ui", "sans-serif"],
         body: ['"General Sans"', "system-ui", "sans-serif"],
       },
       keyframes: {
